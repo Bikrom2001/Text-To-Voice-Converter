@@ -1,46 +1,38 @@
-let speech = new SpeechSynthesisUtterance();
-let voices = window.speechSynthesis.getVoices();
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let speech = new SpeechSynthesisUtterance();
+    let voices = [];
+    let voiceSelect = document.querySelector("select");
 
-// Ses seçimi için bir <select> elementi
-let voiceSelect = document.getElementById("voiceSelect");
+    window.speechSynthesis.onvoiceschanged = () => {
+      voices = window.speechSynthesis.getVoices();
+      speech.voice = voices[0];
 
-// Textarea elementi
-let textArea = document.getElementById("text");
+      voices.forEach(
+        (voice, i) => (voiceSelect.options[i] = new Option(voice.name, i))
+      );
+    };
 
-// Ses değiştirildiğinde event listener
-window.speechSynthesis.onvoiceschanged = () => {
-  voices = window.speechSynthesis.getVoices();
+    voiceSelect.addEventListener("change", () => {
+      speech.voice = voices[voiceSelect.value];
+    });
 
-  voiceSelect.innerHTML = ""; // Mevcut seçenekleri temizle
+    document.getElementById("listenButton").addEventListener("click", () => {
+      let text = document.getElementById("text").value;
+      speech.text = text;
+      window.speechSynthesis.speak(speech);
+    });
 
-  voices.forEach((voice, i) => {
-    let option = document.createElement("option");
-    option.value = i;
-    option.textContent = voice.name;
-    voiceSelect.appendChild(option);
+    document.getElementById("downloadButton").addEventListener("click", () => {
+      let text = document.getElementById("text").value;
+      let blob = new Blob([text], { type: "text/plain" });
+      let url = URL.createObjectURL(blob);
+      let a = document.createElement("a");
+      a.href = url;
+      a.download = "audio.txt";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
   });
-
-  // Default sesi ayarla
-  speech.voice = voices[0];
-};
-
-// Ses seçimi değiştiğinde event listener
-voiceSelect.addEventListener("change", () => {
-  speech.voice = voices[voiceSelect.value];
-});
-
-// Listen butonu için event listener
-document.getElementById("listenButton").addEventListener("click", () => {
-  speech.text = textArea.value;
-  window.speechSynthesis.speak(speech);
-});
-
-// Save butonu için event listener
-document.getElementById("saveButton").addEventListener("click", () => {
-  const textToSave = textArea.value;
-  const blob = new Blob([textToSave], { type: "text/plain" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "textToSpeech.txt";
-  a.click();
-});
+</script>
