@@ -1,84 +1,28 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+let speech = new SpeechSynthesisUtterance();
+let voices = [];
+let voiceSelect = document.querySelector("select");
 
-.hero {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(45deg, #010758, #490d61);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: #fff;
-  padding: 20px; /* Ek padding ekledik */
-}
+window.speechSynthesis.onvoiceschanged = () => {
+  voices = window.speechSynthesis.getVoices();
+  speech.voice = voices[0];
+  voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
+};
 
-.hero h1 {
-  font-size: 45px;
-  font-weight: 500;
-  margin-bottom: 20px; /* Margin azaltıldı */
-}
+voiceSelect.addEventListener("change", () => {
+  speech.voice = voices[voiceSelect.value];
+});
 
-.hero h1 span {
-  color: #ff2963;
-}
+document.querySelector("button.listen").addEventListener("click", () => {
+  speech.text = document.querySelector("textarea").value;
+  window.speechSynthesis.cancel(); // Önceki konuşmayı iptal et
+  window.speechSynthesis.speak(speech);
+});
 
-textarea {
-  width: 100%; /* Genişlik 100% olarak değiştirildi */
-  height: 200px; /* Yükseklik azaltıldı */
-  background: #403d84;
-  color: #fff;
-  font-size: 16px;
-  border: 0;
-  outline: 0;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px; /* Margin azaltıldı */
-}
-
-textarea::placeholder {
-  font-size: 16px;
-  color: #ddd;
-}
-
-.row {
-  width: 100%; /* Genişlik 100% olarak değiştirildi */
-  display: flex;
-  flex-direction: column; /* Sıralama mobilde dikey olacak */
-  align-items: stretch; /* Elemanlar genişliği tam kaplasın */
-}
-
-select {
-  width: 100%; /* Genişlik 100% olarak değiştirildi */
-  color: #fff;
-  background: #403d84;
-  height: 50px;
-  padding: 0 20px;
-  border: 0;
-  outline: 0;
-  border-radius: 35px;
-  margin-top: 10px; /* Margin ekledik */
-}
-
-button {
-  background-color: #ff2963;
-  color: white;
-  font-size: 17px;
-  padding: 10px;
-  border-radius: 35px;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  margin-top: 10px; /* Margin ekledik */
-}
-
-.bxs-right-arrow {
-  font-size: 18px;
-  margin-right: 10px;
-}
+document.querySelector("button.save").addEventListener("click", () => {
+  let textToSave = document.querySelector("textarea").value;
+  let blob = new Blob([textToSave], { type: "text/plain" });
+  let anchor = document.createElement("a");
+  anchor.href = URL.createObjectURL(blob);
+  anchor.download = "text_to_speech.txt";
+  anchor.click();
+});
