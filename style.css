@@ -14,19 +14,23 @@
   justify-content: center;
   flex-direction: column;
   color: #fff;
-  padding: 20px;
 }
 
 .hero h1 {
   font-size: 45px;
   font-weight: 500;
   margin-top: -50px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  text-align: center; /* Yeni eklenen özellik */
+}
+
+.hero h1 span {
+  color: #ff2963;
 }
 
 textarea {
-  width: 100%;
-  max-width: 600px;
+  width: 90%; /* Yeni eklenen özellik */
+  max-width: 600px; /* Yeni eklenen özellik */
   height: 250px;
   background: #403d84;
   color: #fff;
@@ -35,7 +39,8 @@ textarea {
   outline: 0;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  resize: none; /* Yeni eklenen özellik */
 }
 
 textarea::placeholder {
@@ -44,10 +49,12 @@ textarea::placeholder {
 }
 
 .row {
-  width: 100%;
+  width: 90%; /* Yeni eklenen özellik */
+  max-width: 600px; /* Yeni eklenen özellik */
   display: flex;
+  flex-direction: column; /* Yeni eklenen özellik */
   align-items: center;
-  flex-direction: column;
+  margin: 0 auto; /* Yeni eklenen özellik */
 }
 
 button {
@@ -61,17 +68,27 @@ button {
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+}
+
+.bxs-right-arrow {
+  font-size: 18px;
+  margin-right: 10px;
 }
 
 select {
-  width: 100%;
-  color: #fff;
-  background: #403d84;
+  width: 100%; /* Yeni eklenen özellik */
   height: 50px;
+  background: #403d84;
+  color: #fff;
   padding: 0 20px;
   border: 0;
   outline: 0;
   border-radius: 35px;
-  margin-bottom: 20px;
+  appearance: none;
+  background-image: url(image/arrow.png);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position-x: calc(100% - 15px);
+  background-position-y: 10px;
+  margin-bottom: 20px; /* Yeni eklenen özellik */
 }
