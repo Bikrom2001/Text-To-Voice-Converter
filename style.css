@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -13,18 +14,19 @@
   justify-content: center;
   flex-direction: column;
   color: #fff;
+  padding: 20px; /* Ekledim: Mobil cihazlarda içeriğin kenarlardan daha uzak olması için padding ekleyebilirsiniz. */
 }
+
 .hero h1 {
   font-size: 45px;
   font-weight: 500;
   margin-top: -50px;
-  margin-bottom: 50px;
+  margin-bottom: 20px; /* Değiştirdim: Alt boşluk miktarını azalttım. */
 }
-.hero h1 span {
-  color: #ff2963;
-}
+
 textarea {
-  width: 600px;
+  width: 100%; /* Değiştirdim: Mobil cihazlarda genişliği tam ekran yapmak için 100% olarak değiştirdim. */
+  max-width: 600px; /* Ekledim: Genişliği 600 pikselden fazla olmaması için max-width ekledim. */
   height: 250px;
   background: #403d84;
   color: #fff;
@@ -33,36 +35,22 @@ textarea {
   outline: 0;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Değiştirdim: Alt boşluk miktarını azalttım. */
 }
+
 textarea::placeholder {
   font-size: 16px;
   color: #ddd;
 }
+
 .row {
-  width: 600px;
+  width: 100%; /* Değiştirdim: Mobil cihazlarda genişliği tam ekran yapmak için 100% olarak değiştirdim. */
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column; /* Ekledim: Mobil cihazlarda dikey düzende görünmesi için flex-direction'ı değiştirdim. */
 }
-button {
-  background-color: #ff2963;
-  color: white;
-  font-size: 17px;
-  padding: 10px 30px;
-  border-radius: 35px;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-.bxs-right-arrow {
-  font-size: 18px;
-  margin-right: 10px;
-}
+
 select {
-  flex: 1;
+  width: 100%; /* Değiştirdim: Mobil cihazlarda genişliği tam ekran yapmak için 100% olarak değiştirdim. */
   color: #fff;
   background: #403d84;
   height: 50px;
@@ -70,10 +58,5 @@ select {
   border: 0;
   outline: 0;
   border-radius: 35px;
-  appearance: none;
-  background-image: url(image/arrow.png);
-  background-repeat: no-repeat;
-  background-size: 30px;
-  background-position-x: calc(100% - 15px);
-  background-position-y: 10px;
+  margin-bottom: 20px; /* Değiştirdim: Alt boşluk miktarını azalttım. */
 }
