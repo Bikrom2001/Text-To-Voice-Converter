@@ -21,7 +21,6 @@
   font-weight: 500;
   margin-top: -50px;
   margin-bottom: 50px;
-  text-align: center; /* Yeni eklenen özellik */
 }
 
 .hero h1 span {
@@ -29,8 +28,7 @@
 }
 
 textarea {
-  width: 90%; /* Yeni eklenen özellik */
-  max-width: 600px; /* Yeni eklenen özellik */
+  width: 100%; /* Değişiklik: 600px'yi 100% olarak güncelledik */
   height: 250px;
   background: #403d84;
   color: #fff;
@@ -40,7 +38,6 @@ textarea {
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 30px;
-  resize: none; /* Yeni eklenen özellik */
 }
 
 textarea::placeholder {
@@ -49,12 +46,11 @@ textarea::placeholder {
 }
 
 .row {
-  width: 90%; /* Yeni eklenen özellik */
-  max-width: 600px; /* Yeni eklenen özellik */
+  width: 100%; /* Değişiklik: 600px'yi 100% olarak güncelledik */
   display: flex;
-  flex-direction: column; /* Yeni eklenen özellik */
   align-items: center;
-  margin: 0 auto; /* Yeni eklenen özellik */
+  gap: 20px;
+  flex-direction: column; /* Değişiklik: Sıralı elemanları dikey hale getiriyoruz */
 }
 
 button {
@@ -76,10 +72,10 @@ button {
 }
 
 select {
-  width: 100%; /* Yeni eklenen özellik */
-  height: 50px;
-  background: #403d84;
+  width: 100%; /* Değişiklik: Flex konteynırünü dolduracak şekilde genişlettik */
   color: #fff;
+  background: #403d84;
+  height: 50px;
   padding: 0 20px;
   border: 0;
   outline: 0;
@@ -90,5 +86,4 @@ select {
   background-size: 30px;
   background-position-x: calc(100% - 15px);
   background-position-y: 10px;
-  margin-bottom: 20px; /* Yeni eklenen özellik */
 }
