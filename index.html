@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Text To Voice Converter - Roy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="hero">
-      <h1>MusadaN <span>Converter</span></h1>
-      <textarea placeholder="Write anything here...."></textarea>
-      <div class="row">
-        <select></select>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Veya -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-        <button><i class="bx bxs-right-arrow"></i> Listen</button>
-      </div>
+        iframe {
+            width: 100%;
+            height: 100vh; /* Ekran yüksekliğine göre otomatik ayarla */
+            border: 0;
+        }
+
+        .container-fluid {
+            height: 100vh;
+        }
+
+        #recordButton {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    </style>
+    <title>Musanın Uygulaması</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <iframe src="https://incandescent-gnome-b0a0ff.netlify.app/" class="w-100" style="height: 100%;"></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button id="recordButton" class="btn btn-primary">Sesi Kaydet</button>
+            </div>
+        </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+
+    <!-- Bootstrap JS (isteğe bağlı, kullanmıyorsanız bu kısmı kaldırabilirsiniz) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('recordButton').addEventListener('click', function() {
+            // Sesi kaydetme işlemlerini burada gerçekleştirebilirsiniz
+            // Örnek olarak, bir ses kayıt kütüphanesi veya Web Audio API kullanılabilir
+            // Ancak, tarayıcı güvenlik politikalarına dikkat edilmelidir.
+            // Bu örnekte, ses kaydı için özel bir kütüphane kullanılmamıştır.
+            // Gerçek bir uygulama için daha fazla geliştirmeye ihtiyaç duyabilirsiniz.
+            alert('Ses kaydetme işlemi başlatıldı. Not: Tarayıcı güvenlik politikalarına dikkat edilmelidir.');
+        });
+    </script>
+</body>
 </html>
