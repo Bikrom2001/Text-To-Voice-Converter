@@ -1,10 +1,10 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -15,21 +15,18 @@
   flex-direction: column;
   color: #fff;
 }
-
 .hero h1 {
   font-size: 45px;
   font-weight: 500;
   margin-top: -50px;
   margin-bottom: 50px;
 }
-
 .hero h1 span {
   color: #ff2963;
 }
-
 textarea {
-  width: 100%; /* Değişiklik: 600px'yi 100% olarak güncelledik */
-  height: 250px;
+  width: 600px;
+  height: 400px;
   background: #403d84;
   color: #fff;
   font-size: 16px;
@@ -39,20 +36,16 @@ textarea {
   border-radius: 10px;
   margin-bottom: 30px;
 }
-
 textarea::placeholder {
   font-size: 16px;
   color: #ddd;
 }
-
 .row {
-  width: 100%; /* Değişiklik: 600px'yi 100% olarak güncelledik */
+  width: 600px;
   display: flex;
   align-items: center;
   gap: 20px;
-  flex-direction: column; /* Değişiklik: Sıralı elemanları dikey hale getiriyoruz */
 }
-
 button {
   background-color: #ff2963;
   color: white;
@@ -65,14 +58,12 @@ button {
   display: flex;
   align-items: center;
 }
-
 .bxs-right-arrow {
   font-size: 18px;
   margin-right: 10px;
 }
-
 select {
-  width: 100%; /* Değişiklik: Flex konteynırünü dolduracak şekilde genişlettik */
+  flex: 1;
   color: #fff;
   background: #403d84;
   height: 50px;
