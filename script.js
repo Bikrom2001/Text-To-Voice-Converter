@@ -14,6 +14,7 @@ voiceSelect.addEventListener("change", () => {
 
 document.querySelector("button.listen").addEventListener("click", () => {
   speech.text = document.querySelector("textarea").value;
+  window.speechSynthesis.cancel(); // Önceki konuşmayı iptal et
   window.speechSynthesis.speak(speech);
 });
 
