@@ -14,19 +14,19 @@
   justify-content: center;
   flex-direction: column;
   color: #fff;
-  padding: 20px; /* Ekledim: Mobil cihazlarda içeriğin kenarlardan daha uzak olması için padding ekleyebilirsiniz. */
+  padding: 20px;
 }
 
 .hero h1 {
   font-size: 45px;
   font-weight: 500;
   margin-top: -50px;
-  margin-bottom: 20px; /* Değiştirdim: Alt boşluk miktarını azalttım. */
+  margin-bottom: 20px;
 }
 
 textarea {
-  width: 100%; /* Değiştirdim: Mobil cihazlarda genişliği tam ekran yapmak için 100% olarak değiştirdim. */
-  max-width: 600px; /* Ekledim: Genişliği 600 pikselden fazla olmaması için max-width ekledim. */
+  width: 100%;
+  max-width: 600px;
   height: 250px;
   background: #403d84;
   color: #fff;
@@ -35,7 +35,7 @@ textarea {
   outline: 0;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 20px; /* Değiştirdim: Alt boşluk miktarını azalttım. */
+  margin-bottom: 20px;
 }
 
 textarea::placeholder {
@@ -44,13 +44,28 @@ textarea::placeholder {
 }
 
 .row {
-  width: 100%; /* Değiştirdim: Mobil cihazlarda genişliği tam ekran yapmak için 100% olarak değiştirdim. */
+  width: 100%;
   display: flex;
-  flex-direction: column; /* Ekledim: Mobil cihazlarda dikey düzende görünmesi için flex-direction'ı değiştirdim. */
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  background-color: #ff2963;
+  color: white;
+  font-size: 17px;
+  padding: 10px 30px;
+  border-radius: 35px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 select {
-  width: 100%; /* Değiştirdim: Mobil cihazlarda genişliği tam ekran yapmak için 100% olarak değiştirdim. */
+  width: 100%;
   color: #fff;
   background: #403d84;
   height: 50px;
@@ -58,5 +73,5 @@ select {
   border: 0;
   outline: 0;
   border-radius: 35px;
-  margin-bottom: 20px; /* Değiştirdim: Alt boşluk miktarını azalttım. */
+  margin-bottom: 20px;
 }
