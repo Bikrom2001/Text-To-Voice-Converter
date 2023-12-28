@@ -1,10 +1,10 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -14,19 +14,22 @@
   justify-content: center;
   flex-direction: column;
   color: #fff;
+  padding: 20px; /* Ek padding ekledik */
 }
+
 .hero h1 {
   font-size: 45px;
   font-weight: 500;
-  margin-top: -50px;
-  margin-bottom: 50px;
+  margin-bottom: 20px; /* Margin azaltıldı */
 }
+
 .hero h1 span {
   color: #ff2963;
 }
+
 textarea {
-  width: 600px;
-  height: 400px;
+  width: 100%; /* Genişlik 100% olarak değiştirildi */
+  height: 200px; /* Yükseklik azaltıldı */
   background: #403d84;
   color: #fff;
   font-size: 16px;
@@ -34,36 +37,23 @@ textarea {
   outline: 0;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Margin azaltıldı */
 }
+
 textarea::placeholder {
   font-size: 16px;
   color: #ddd;
 }
+
 .row {
-  width: 600px;
+  width: 100%; /* Genişlik 100% olarak değiştirildi */
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column; /* Sıralama mobilde dikey olacak */
+  align-items: stretch; /* Elemanlar genişliği tam kaplasın */
 }
-button {
-  background-color: #ff2963;
-  color: white;
-  font-size: 17px;
-  padding: 10px 30px;
-  border-radius: 35px;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-.bxs-right-arrow {
-  font-size: 18px;
-  margin-right: 10px;
-}
+
 select {
-  flex: 1;
+  width: 100%; /* Genişlik 100% olarak değiştirildi */
   color: #fff;
   background: #403d84;
   height: 50px;
@@ -71,10 +61,24 @@ select {
   border: 0;
   outline: 0;
   border-radius: 35px;
-  appearance: none;
-  background-image: url(image/arrow.png);
-  background-repeat: no-repeat;
-  background-size: 30px;
-  background-position-x: calc(100% - 15px);
-  background-position-y: 10px;
+  margin-top: 10px; /* Margin ekledik */
+}
+
+button {
+  background-color: #ff2963;
+  color: white;
+  font-size: 17px;
+  padding: 10px;
+  border-radius: 35px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Margin ekledik */
+}
+
+.bxs-right-arrow {
+  font-size: 18px;
+  margin-right: 10px;
 }
